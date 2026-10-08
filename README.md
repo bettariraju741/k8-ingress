@@ -23,12 +23,12 @@ aws iam create-policy \
 4.Create an IAM role and Kubernetes ServiceAccount for the LBC. Use the ARN from the previous step.
 
 eksctl create iamserviceaccount \
---cluster=<cluster-name> \
+--cluster=expense \
 --namespace=kube-system \
 --name=aws-load-balancer-controller \
---attach-policy-arn=arn:aws:iam::<AWS_ACCOUNT_ID>:policy/AWSLoadBalancerControllerIAMPolicy \
+--attach-policy-arn=arn:aws:iam::318432260649:policy/AWSLoadBalancerControllerIAMPolicy \
 --override-existing-serviceaccounts \
---region <region-code> \
+--region us-east-1 \
 --approve
 
 ---
